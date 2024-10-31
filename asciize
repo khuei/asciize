@@ -32,27 +32,6 @@ def image_to_ascii(image_path, output_width=200, contrast_level=1.0):
 
     return ascii_art
 
-def save_ascii_as_image(ascii_art, output_file):
-    # Create a new image to draw the ASCII art
-    font_size = 12
-    font = ImageFont.load_default()
-    lines = ascii_art.splitlines()
-
-    # Calculate image size
-    width = max(len(line) for line in lines) * font_size
-    height = len(lines) * font_size * 2
-
-    # Create a new blank image
-    image = Image.new('RGB', (width, height), color='black')
-    draw = ImageDraw.Draw(image)
-
-    # Draw each line of ASCII art
-    for i, line in enumerate(lines):
-        draw.text((0, i * font_size), line, fill='white', font=font)
-
-    # Save the image as PNG (to avoid distortion)
-    image.save(output_file, format='PNG')
-
 def main():
     parser = argparse.ArgumentParser(description='Convert an image to ASCII art.')
     parser.add_argument('image_path', type=str, help='Path to the image file')
