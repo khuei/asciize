@@ -1,6 +1,12 @@
 # Image to ASCII Converter
 
-Command-line utility to convert image to ascii art
+Command-line utility to convert image to ascii art.
+
+### Before
+![Original Image](./sample.jpg)
+
+### After
+![Original Image](./sample-text.jpg)
 
 ## Dependencies
 - Python 3.x
